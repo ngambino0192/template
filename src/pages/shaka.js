@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-const Shaka = () => {
+const Shaka = ({ data }) => {
+  console.log('data: ', data);
   return (
     <>
       <nav class="navbar navbar-default navbar-fixed-top" id="top">
@@ -54,3 +55,19 @@ const Shaka = () => {
 };
 
 export default Shaka;
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(
+      filter: { frontmatter: { category: { eq: "portfolio" } } }
+    ) {
+      nodes {
+        frontmatter {
+          category
+          title
+          description
+        }
+      }
+    }
+  }
+`;
