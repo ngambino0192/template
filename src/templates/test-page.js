@@ -25,12 +25,6 @@ export const TestPageTemplate = ({ title, content, contentComponent }) => {
   );
 };
 
-AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func
-};
-
 const TestPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
