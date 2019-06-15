@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Link, graphql, StaticQuery } from 'gatsby';
 import PreviewCompatibleImage from './PreviewCompatibleImage';
 
-class BlogRoll extends React.Component {
+class PortfolioRoll extends React.Component {
   render() {
     const { data } = this.props;
     const { edges: posts } = data.allMarkdownRemark;
+    console.log('data: ', data);
 
     return (
       <div className="columns is-multiline">
@@ -30,10 +31,7 @@ class BlogRoll extends React.Component {
                     </div>
                   ) : null}
                   <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
+                    <Link className="title has-text-primary is-size-4" to="/">
                       {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
@@ -46,7 +44,7 @@ class BlogRoll extends React.Component {
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className="button" to={post.fields.slug}>
+                  <Link className="button" to="/">
                     Keep Reading →
                   </Link>
                 </p>
@@ -58,7 +56,7 @@ class BlogRoll extends React.Component {
   }
 }
 
-BlogRoll.propTypes = {
+PortfolioRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array
@@ -69,36 +67,25 @@ BlogRoll.propTypes = {
 export default () => (
   <StaticQuery
     query={graphql`
-      query BlogRollQuery {
+      query PortfolioRollQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          filter: { frontmatter: { category: { eq: "portfolio" } } }
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
-              fields {
-                slug
-              }
+              html
               frontmatter {
                 title
-                templateKey
-                date(formatString: "MMMM DD, YYYY")
-                featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
+                description
+                category
+                date
               }
             }
           }
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <PortfolioRoll data={data} count={count} />}
   />
 );
