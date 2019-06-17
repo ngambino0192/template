@@ -88,39 +88,20 @@ PortfolioPost.propTypes = {
 
 export default PortfolioPost;
 
-// export const pageQuery = graphql`
-//   query PortfolioPageByID($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         description
-//         tags
-//       }
-//     }
-//   }
-// `;
-
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query PortfolioRollQuery {
-        markdownRemark(id: { eq: $id }) {
-          id
-          html
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            tags
-          }
-        }
+export const pageQuery = graphql`
+  query PortfolioPageByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
       }
-    `}
-    render={(data, count) => <PortfolioRoll data={data} count={count} />}
-  />
+    }
+  }
+`;
 
 // export const portfolioQuery = graphql`
 //   query PortfolioCategory {
