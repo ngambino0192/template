@@ -18,6 +18,7 @@ export const PortfolioPageTemplate = ({
 
   return (
     <section className="section">
+      {console.log('portoflio page')}
       {helmet || ''}
       <div className="container content">
         <div className="columns">
@@ -101,3 +102,21 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+// export const portfolioQuery = graphql`
+//   query PortfolioCategory {
+//     allMarkdownRemark(
+//       filter: { frontmatter: { category: { eq: "portfolio" } } }
+//     ) {
+//       edges {
+//         node {
+//           excerpt
+//           id
+//           frontmatter {
+//             title
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
