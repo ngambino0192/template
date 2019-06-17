@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: staging # Will be replaced during build with the current branch
+  branch: NETLIFY_CMS_BRANCH # Will be replaced during build with the current branch
 
 publish_mode: editorial_workflow
 media_folder: static/img
