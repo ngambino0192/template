@@ -13,4 +13,4 @@ echo "CMS config branch: $BRANCH"
 # the netlify config from the netlify-cms-config and overwrite
 # the branch setting.
 yes | cp -rf ./netlify-cms-config.yml ./static/admin/config.yml
-#sed -i -e "s|NETLIFY_CMS_BRANCH|$BRANCH|g" ./static/admin/config.yml
+sed -i -e "s|NETLIFY_CMS_BRANCH|$BRANCH|g" ./static/admin/config.yml
