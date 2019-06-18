@@ -38,6 +38,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "pre": "chmod +x ./prebuild.sh && ./prebuild.sh",
     "clean": "rimraf .cache public",
     "start:app": "npm run develop",
     "start:lambda": "netlify-lambda serve src/lambda",
