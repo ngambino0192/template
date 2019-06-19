@@ -38,10 +38,11 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <HomepageTemplate
-        // contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        // content={post.html}
+      // contentComponent={HTMLContent}
+      // title={post.frontmatter.title}
+      // content={post.html}
       />
+      <div>{data}</div>
     </Layout>
   );
 };
