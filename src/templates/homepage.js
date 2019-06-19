@@ -51,3 +51,21 @@ HomePage.propTypes = {
 };
 
 export default HomePage;
+
+export const aboutPageQuery = graphql`
+  query HomePage($id: String!) {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "homepage" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            templateKey
+          }
+        }
+      }
+    }
+  }
+`;
