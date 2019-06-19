@@ -7,20 +7,23 @@ import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
 export const HomepageTemplate = ({
-  // content,
-  // contentComponent,
+  content,
+  contentComponent,
   // description,
   tags,
   title,
   helmet
 }) => {
   // const PostContent = contentComponent || Content;
+  const HomeContent = contentComponent || Content;
 
   return (
     <section className="section">
       {helmet || ''}
       <div className="container content">
-        <div>Hello from Homepage</div>
+        <HomeContent className="content" content={content} />
+        {/* <div>Hello from Homepage</div> */}
+        {/* <div>Title: {title}</div> */}
       </div>
     </section>
   );
@@ -84,15 +87,16 @@ HomepageTemplate.propTypes = {
 
 // export const pageQuery = graphql`
 //   query HomePageQuery() {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         description
-//         tags
+//     allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "homepage"}}}) {
+//     edges {
+//       node {
+//         id
+//         frontmatter {
+//           title
+//           templateKey
+//         }
 //       }
 //     }
+//   }
 //   }
 // `;
