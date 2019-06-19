@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
-import Helmet from 'react-helmet';
+// import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -11,92 +11,43 @@ export const HomepageTemplate = ({
   contentComponent,
   // description,
   tags,
-  title,
-  helmet
+  title
 }) => {
-  // const PostContent = contentComponent || Content;
   const HomeContent = contentComponent || Content;
 
   return (
     <section className="section">
-      {helmet || ''}
       <div className="container content">
         <HomeContent className="content" content={content} />
-        {/* <div>Hello from Homepage</div> */}
-        {/* <div>Title: {title}</div> */}
+        <div>Hello from Homepage Template {title}</div>
       </div>
     </section>
   );
 };
 
 HomepageTemplate.propTypes = {
-  // content: PropTypes.node.isRequired,
-  // contentComponent: PropTypes.func,
-  // description: PropTypes.string,
+  content: PropTypes.node.isRequired,
+  contentComponent: PropTypes.func,
   title: PropTypes.string,
   helmet: PropTypes.object
 };
 
-// const BlogPost = ({ data }) => {
-//   const { markdownRemark: post } = data;
+const HomePage = ({ data }) => {
+  const { markdownRemark: post } = data;
 
-//   return (
-//     <Layout>
-//       <BlogPostTemplate
-//         content={post.html}
-//         contentComponent={HTMLContent}
-//         description={post.frontmatter.description}
-//         helmet={
-//           <Helmet titleTemplate="%s | Blog">
-//             <title>{`${post.frontmatter.title}`}</title>
-//             <meta
-//               name="description"
-//               content={`${post.frontmatter.description}`}
-//             />
-//           </Helmet>
-//         }
-//         tags={post.frontmatter.tags}
-//         title={post.frontmatter.title}
-//       />
-//     </Layout>
-//   );
-// };
+  return (
+    <Layout>
+      <HomepageTemplate
+        // contentComponent={HTMLContent}
+        title={post.frontmatter.title}
+        // content={post.html}
+      />
+    </Layout>
+  );
+};
 
-// BlogPost.propTypes = {
-//   data: PropTypes.shape({
-//     markdownRemark: PropTypes.object
-//   })
-// };
+HomePage.propTypes = {
+  data: PropTypes.object.isRequired
+};
 
-// export default BlogPost;
-
-// export const pageQuery = graphql`
-//   query BlogPostByID($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
-//         title
-//         description
-//         tags
-//       }
-//     }
-//   }
-// `;
-
-// export const pageQuery = graphql`
-//   query HomePageQuery() {
-//     allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "homepage"}}}) {
-//     edges {
-//       node {
-//         id
-//         frontmatter {
-//           title
-//           templateKey
-//         }
-//       }
-//     }
-//   }
-//   }
-// `;
+export default HomePage;
