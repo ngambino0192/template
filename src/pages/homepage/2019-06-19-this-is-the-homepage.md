@@ -1,5 +1,5 @@
 ---
 templateKey: homepage
-title: This is the Homepage
+title: This is from the Title CMS
 ---
 
