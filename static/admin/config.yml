@@ -7,6 +7,20 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'homepage'
+    label: 'Homepage'
+    category: 'homepage'
+    folder: 'src/pages/homepage'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'homepage',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
   - name: 'portfolio'
     label: 'Portfolio Item'
     category: 'portfolio'
