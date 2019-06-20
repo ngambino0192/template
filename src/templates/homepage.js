@@ -1,71 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-// import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
-export const HomepageTemplate = ({
-  content,
-  contentComponent,
-  // description,
-  tags,
-  title
-}) => {
-  const HomeContent = contentComponent || Content;
+export const HomePageTemplate = ({ title, tags }) => {
+  // const PageContent = contentComponent || Content;
 
   return (
-    <section className="section">
-      <div className="container content">
-        <HomeContent className="content" content={content} />
-        <div>Hello from Homepage Template {title}</div>
-      </div>
-    </section>
+    <>
+      <div>Homepage Template</div>
+      <div>Title: {title}</div>
+    </>
   );
 };
 
-HomepageTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  title: PropTypes.string,
-  helmet: PropTypes.object
+HomePageTemplate.propTypes = {
+  title: PropTypes.string
 };
 
 const HomePage = ({ data }) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout>
-      <HomepageTemplate
-      // contentComponent={HTMLContent}
-      // title={post.frontmatter.title}
-      // content={post.html}
-      />
-      <div>{data}</div>
+      <HomePageTemplate title={post.frontmatter.title} />
     </Layout>
   );
 };
 
 HomePage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.object
+  })
 };
 
 export default HomePage;
 
-export const aboutPageQuery = graphql`
-  query {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "homepage" } } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            templateKey
-          }
-        }
+export const pageQuery = graphql`
+  query HomePageQuery($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        tags
       }
     }
   }

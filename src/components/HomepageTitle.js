@@ -13,11 +13,15 @@ class HomepageTitle extends React.Component {
     return (
       <>
         <div>HomepageTitle Component</div>
-        {posts.map(({ node: post }) => (
-          <div key={post.id}>
-            <h2>{post.frontmatter.title}</h2>
-          </div>
-        ))}
+        <ul>
+          {posts.map(({ node: post }) => (
+            <li>
+              <div key={post.id}>
+                <h2>{post.frontmatter.title}</h2>
+              </div>
+            </li>
+          ))}
+        </ul>
       </>
     );
   }
