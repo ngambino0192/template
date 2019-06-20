@@ -16,6 +16,11 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
+    {/* <iframe
+      title="unique"
+      class="video-player video-player--banner"
+      src="https://player.vimeo.com/video/315768830?background=1&autoplay=1&loop=1&byline=0&title=0"
+    /> */}
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -78,14 +83,14 @@ export const IndexPageTemplate = ({
                     <h3 className="subtitle">{mainpitch.description}</h3>
                   </div>
                 </div>
-                <div className="columns">
+                {/* <div className="columns">
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
                       {heading}
                     </h3>
                     <p>{description}</p>
                   </div>
-                </div>
+                </div> */}
                 <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
@@ -95,10 +100,10 @@ export const IndexPageTemplate = ({
                   </div>
                 </div>
                 <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
+                  {/* <h3 className="has-text-weight-semibold is-size-2">
                     Latest stories
-                  </h3>
-                  <BlogRoll />
+                  </h3> */}
+                  {/* <BlogRoll /> */}
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
                       Read more
