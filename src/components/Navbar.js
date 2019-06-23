@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+// import logo from '../img/logo.svg';
 // import Logo from './Logo';
+import Logo from './NavLogo';
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -42,10 +43,10 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            {/* <Logo /> */}
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
+            <Logo />
+            {/* <Link to="/" className="navbar-item" title="Logo">
+              <img src={logo} alt="HappyShaka Logo" style={{ width: '88px' }} />
+            </Link> */}
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
@@ -63,23 +64,23 @@ const Navbar = class extends React.Component {
           >
             <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
-                About
+                Vacations
               </Link>
               <Link className="navbar-item" to="/products">
-                Products
+                Planning
               </Link>
               <Link className="navbar-item" to="/portfolio">
-                Portfolio
+                Travel Tips
               </Link>
               <Link className="navbar-item" to="/blog">
-                Blog
+                Shaka TV
               </Link>
               <Link className="navbar-item" to="/contact">
                 Contact
               </Link>
-              <Link className="navbar-item" to="/contact/examples">
+              {/* <Link className="navbar-item" to="/contact/examples">
                 Form Examples
-              </Link>
+              </Link> */}
             </div>
             <div className="navbar-end has-text-centered">
               <a
@@ -88,9 +89,9 @@ const Navbar = class extends React.Component {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="icon">
+                {/* <span className="icon">
                   <img src={github} alt="Github" />
-                </span>
+                </span> */}
               </a>
             </div>
           </div>
