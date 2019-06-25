@@ -1,9 +1,18 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import NavBar from 'react-bootstrap/NavBar';
+import styled from 'styled-components';
+
 import github from '../img/github-icon.svg';
 // import logo from '../img/logo.svg';
 // import Logo from './Logo';
 import Logo from './NavLogo';
+import { LinkContainer } from '../styles/NavStyles.js';
+
+// const LinkContainer = styled.div`
+//   font-size: 25px;
+//   text-align: center;
+// `;
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -36,7 +45,7 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
+      <NavBar
         className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
@@ -62,7 +71,7 @@ const Navbar = class extends React.Component {
             id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
+            <LinkContainer className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
                 Vacations
               </Link>
@@ -81,7 +90,7 @@ const Navbar = class extends React.Component {
               {/* <Link className="navbar-item" to="/contact/examples">
                 Form Examples
               </Link> */}
-            </div>
+            </LinkContainer>
             <div className="navbar-end has-text-centered">
               <a
                 className="navbar-item"
@@ -96,7 +105,7 @@ const Navbar = class extends React.Component {
             </div>
           </div>
         </div>
-      </nav>
+      </NavBar>
     );
   }
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { Figure } from 'react-bootstrap';
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = { borderRadius: '5px' };
@@ -32,3 +33,16 @@ PreviewCompatibleImage.propTypes = {
 };
 
 export default PreviewCompatibleImage;
+
+// BOOTSTRAP FIGURE? TODO: integrate into img tags above, test upload functionality
+{
+  /* <Figure class="effect-bubba">
+<img src={image} alt={alt} class="img-responsive" />
+<Figure.Caption>
+  <h2>Ocean Activities</h2>
+  <a href="/" data-toggle="modal" data-target="#Modal-2">
+    View more
+  </a>
+</Figure.Caption>
+</Figure> */
+}
