@@ -9,7 +9,7 @@ import github from '../img/github-icon.svg';
 import Logo from './NavLogo';
 import { LinkContainer } from '../styles/NavStyles.js';
 
-const Navbar = class extends React.Component {
+const NavBar = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,4 +105,4 @@ const Navbar = class extends React.Component {
   }
 };
 
-export default Navbar;
+export default NavBar;

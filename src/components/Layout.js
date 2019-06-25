@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 import useSiteMetadata from './SiteMetadata';
 
 import { useStaticQuery, Link, graphql } from 'gatsby';
@@ -20,12 +20,7 @@ const TemplateWrapper = ({ children }) => {
           sizes="180x180"
           href="/img/apple-touch-icon.png"
         />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon.ico"
-
-        />
+        <link rel="icon" type="image/png" href="/img/favicon.ico" />
         {/* <link
           rel="icon"
           type="image/png"
@@ -45,7 +40,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
-      <Navbar />
+      <NavBar />
       <div>{children}</div>
       <Footer />
     </div>
