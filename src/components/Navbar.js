@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Navbar from 'react-bootstrap/Navbar';
+// import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
 
 import github from '../img/github-icon.svg';
@@ -9,7 +9,7 @@ import github from '../img/github-icon.svg';
 import Logo from './NavLogo';
 import { LinkContainer } from '../styles/NavStyles.js';
 
-const NavBar = class extends React.Component {
+const Navbar = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +40,7 @@ const NavBar = class extends React.Component {
 
   render() {
     return (
-      <Navbar
+      <nav
         className="navbar is-transparent"
         role="navigation"
         aria-label="main-navigation"
@@ -100,9 +100,9 @@ const NavBar = class extends React.Component {
             </div>
           </div>
         </div>
-      </Navbar>
+      </nav>
     );
   }
 };
 
-export default NavBar;
+export default Navbar;
