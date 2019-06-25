@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
-// import Navbar from 'react-bootstrap/Navbar';
+// import { Navbar as BootstrapNavbar } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
 import styled from 'styled-components';
 
 import github from '../img/github-icon.svg';
@@ -9,12 +10,12 @@ import github from '../img/github-icon.svg';
 import Logo from './NavLogo';
 import { LinkContainer } from '../styles/NavStyles.js';
 
-const Navbar = class extends React.Component {
+const NavbarComponent = class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       active: false,
-      navBarActiveClass: ''
+      navBarActiveClass: '',
     };
   }
 
@@ -22,17 +23,17 @@ const Navbar = class extends React.Component {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active
+        active: !this.state.active,
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active'
+              navBarActiveClass: 'is-active',
             })
           : this.setState({
-              navBarActiveClass: ''
+              navBarActiveClass: '',
             });
       }
     );
@@ -40,12 +41,12 @@ const Navbar = class extends React.Component {
 
   render() {
     return (
-      <nav
+      <Navbar
         className="navbar is-transparent"
         role="navigation"
-        aria-label="main-navigation"
-      >
+        aria-label="main-navigation">
         <div className="container">
+          {/* <BootstrapNavbar>Hello</BootstrapNavbar> */}
           <div className="navbar-brand">
             <Logo />
             {/* <Link to="/" className="navbar-item" title="Logo">
@@ -55,8 +56,7 @@ const Navbar = class extends React.Component {
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
+              onClick={() => this.toggleHamburger()}>
               <span />
               <span />
               <span />
@@ -64,8 +64,7 @@ const Navbar = class extends React.Component {
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
+            className={`navbar-menu ${this.state.navBarActiveClass}`}>
             <LinkContainer className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
                 Vacations
@@ -91,8 +90,7 @@ const Navbar = class extends React.Component {
                 className="navbar-item"
                 href="https://github.com/ngambino0192/template"
                 target="_blank"
-                rel="noopener noreferrer"
-              >
+                rel="noopener noreferrer">
                 {/* <span className="icon">
                   <img src={github} alt="Github" />
                 </span> */}
@@ -100,9 +98,9 @@ const Navbar = class extends React.Component {
             </div>
           </div>
         </div>
-      </nav>
+      </Navbar>
     );
   }
 };
 
-export default Navbar;
+export default NavbarComponent;
