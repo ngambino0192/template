@@ -1,20 +1,54 @@
-import React from "react";
-import { Link } from "gatsby";
-import { Navbar, Nav } from "react-bootstrap";
-import styled from "styled-components";
-import Logo from "./NavLogo";
+import React from 'react';
+import { Nav, Row, Col, Container } from 'react-bootstrap';
+import Logo from './NavLogo';
+
+const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
 
 const NavbarComponent = class extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      scrollY: document.documentElement.scrollTop
+    };
+  }
+  componentDidMount() {
+    this.setState({ scrollY: window.pageYOffset });
+    window.addEventListener('scroll', resizeNav);
+    return () => {
+      window.removeEventListener('scroll', resizeNav);
+    };
+
+    function resizeNav(e) {
+      let nav = document.querySelector('.navbar');
+
+      if (window.scrollY > 100) {
+        nav.classList.add('navbar-shrink');
+      } else {
+        nav.classList.remove('navbar-shrink');
+      }
+    }
+  }
+
   render() {
     return (
-      <Navbar bg="dark">
-        <Nav.Item>
-          <Nav.Link>Vacations</Nav.Link>
-          <Nav.Link>Planning</Nav.Link>
-          <Nav.Link>Travel Tips</Nav.Link>
-          <Nav.Link>Shaka TV</Nav.Link>
-        </Nav.Item>
-      </Navbar>
+      <Container className="navbar">
+        <Row>
+          <Col>
+            <Logo className="nav-logo" />
+          </Col>
+          <Col>
+            <Row>
+              {links.map(link => {
+                return (
+                  <Col>
+                    <Nav.Link>{link}</Nav.Link>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
     );
   }
 };
