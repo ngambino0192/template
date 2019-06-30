@@ -6,6 +6,7 @@ const Div = styled.div`
   margin-left: 1em;
   padding-top: 0.4em;
   fill: #fdd136;
+  /* background-color: green; */
 `;
 
 export default Div;

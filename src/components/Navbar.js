@@ -1,7 +1,8 @@
 import React from 'react';
 import { Nav, Row, Col, Container } from 'react-bootstrap';
 import Logo from './NavLogo';
-// import Div from 'styles/NavStyles';
+import Div from '../styles/NavStyles';
+// import { Div, Blah, Boom } from '../styles/NavStyles';
 
 const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
 
@@ -24,32 +25,37 @@ const NavbarComponent = class extends React.Component {
 
       if (window.scrollY > 100) {
         nav.classList.add('navbar-shrink');
+        console.log('I am greater than 100');
       } else {
         nav.classList.remove('navbar-shrink');
+        console.log('I am less than 100');
       }
     }
   }
 
   render() {
+    console.log('state: ', this.state);
     return (
-      <Container className="navbar" fluid="true">
-        <Row noGutters="true">
-          <Col lg="{true}">
-            <Logo className="nav-logo" />
-          </Col>
-          <Col lg="{true}" xl={{ span: 'auto' }}>
-            <Row noGutters="true">
-              {links.map(link => {
-                return (
-                  <Col lg="{true}">
-                    <Nav.Link>{link}</Nav.Link>
-                  </Col>
-                );
-              })}
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+      <Div>
+        <Container className="navbar" fluid="true">
+          <Row noGutters="true">
+            <Col lg="{true}">
+              <Logo className="nav-logo" />
+            </Col>
+            <Col lg="{true}" xl={{ span: 'auto' }}>
+              <Row noGutters="true">
+                {links.map(link => {
+                  return (
+                    <Col lg="{true}">
+                      <Nav.Link>{link}</Nav.Link>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </Div>
     );
   }
 };
