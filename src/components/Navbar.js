@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Row, Col, Container } from 'react-bootstrap';
 import Logo from './NavLogo';
+// import Div from 'styles/NavStyles';
 
 const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
 
@@ -31,16 +32,16 @@ const NavbarComponent = class extends React.Component {
 
   render() {
     return (
-      <Container className="navbar">
-        <Row>
-          <Col>
+      <Container className="navbar" fluid="true">
+        <Row noGutters="true">
+          <Col lg="{true}">
             <Logo className="nav-logo" />
           </Col>
-          <Col>
-            <Row>
+          <Col lg="{true}" xl={{ span: 'auto' }}>
+            <Row noGutters="true">
               {links.map(link => {
                 return (
-                  <Col>
+                  <Col lg="{true}">
                     <Nav.Link>{link}</Nav.Link>
                   </Col>
                 );
