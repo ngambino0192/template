@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-const Div = styled.div`
+const NavBar = styled.div`
+  background-color: #1580b1;
+  position: fixed;
+  z-index: 99;
   width: 100%;
-  max-width: 280px;
-  margin-left: 1em;
-  padding-top: 0.4em;
-  fill: #fdd136;
-  /* background-color: green; */
 `;
 
-export default Div;
+const NavLinks = styled.a`
+  color: green !important;
+`;
+
+export { NavBar, NavLinks };
