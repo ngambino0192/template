@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './NavLogo';
-import { NavBar, NavLink } from '../styles/NavStyles';
+import { NavLink, NavBar } from '../styles/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 // TODO:
@@ -8,33 +8,34 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
 
 const NavbarComponent = class extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     scrollY: document.documentElement.scrollTop,
-  //   };
-  // }
-  // componentDidMount() {
-  //   this.setState({ scrollY: window.pageYOffset });
-  //   window.addEventListener('scroll', resizeNav);
-  //   return () => {
-  //     window.removeEventListener('scroll', resizeNav);
-  //   };
+  constructor() {
+    super();
+    this.state = {
+      scrollY: document.documentElement.scrollTop
+    };
+  }
+  componentDidMount() {
+    this.setState({ scrollY: window.pageYOffset });
+    window.addEventListener('scroll', resizeNav);
+    return () => {
+      window.removeEventListener('scroll', resizeNav);
+    };
 
-  //   function resizeNav(e) {
-  //     let nav = document.querySelector('.navbar');
+    function resizeNav(e) {
+      const nav = document.querySelector('.navbar');
 
-  //     if (window.scrollY > 100) {
-  //       nav.classList.add('navbar-shrink');
-  //     } else {
-  //       nav.classList.remove('navbar-shrink');
-  //     }
-  //   }
-  // }
+      if (window.scrollY > 200) {
+        nav.style.display = 'none';
+        nav.classList.add('visible');
+      } else {
+        nav.style.display = 'block';
+      }
+    }
+  }
 
   render() {
     return (
-      <NavBar>
+      <NavBar className="navbar">
         <Grid>
           <Row middle="xs">
             <Col xs={4}>

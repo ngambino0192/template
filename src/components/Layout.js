@@ -6,10 +6,13 @@ import useSiteMetadata from './SiteMetadata';
 
 import { useStaticQuery, Link, graphql } from 'gatsby';
 
+// import { GlobalStyles } from '../styles/GlobalStyles';
+
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
+      {/* <GlobalStyles /> */}
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
