@@ -4,6 +4,7 @@ const NavLink = styled.a`
   background: black;
   color: aqua;
   padding: 5px 10px;
+  font-family: 'martel';
 `;
 
 export { NavLink };

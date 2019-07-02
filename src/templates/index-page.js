@@ -13,7 +13,7 @@ export const IndexPageTemplate = ({
   subheading,
   mainpitch,
   description,
-  intro,
+  intro
 }) => (
   <div>
     {/* <iframe
@@ -28,8 +28,9 @@ export const IndexPageTemplate = ({
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
         backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}>
+        backgroundAttachment: `fixed`
+      }}
+    >
       <div
         style={{
           display: 'flex',
@@ -37,8 +38,9 @@ export const IndexPageTemplate = ({
           lineHeight: '1',
           justifyContent: 'space-around',
           alignItems: 'left',
-          flexDirection: 'column',
-        }}>
+          flexDirection: 'column'
+        }}
+      >
         <h1 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen">
           {title}
         </h1>
@@ -50,8 +52,9 @@ export const IndexPageTemplate = ({
             backgroundColor: 'rgb(255, 68, 0)',
             color: 'white',
             lineHeight: '1',
-            padding: '0.25em',
-          }}>
+            padding: '0.25em'
+          }}
+        >
           {subheading}
         </h3>
       </div>
@@ -114,8 +117,8 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+    blurbs: PropTypes.array
+  })
 };
 
 const IndexPage = ({ data }) => {
@@ -139,9 +142,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 };
 
 export default IndexPage;
