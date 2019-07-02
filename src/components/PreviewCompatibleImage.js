@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: '5px' };
+  const imageStyle = {
+    borderRadius: '5px';
+    opacity: '0.8'; 
+    - webkit - transition: 'opacity 0.35s'; transition: 'opacity 0.35s';
+};
   const { alt = '', childImageSharp, image } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
