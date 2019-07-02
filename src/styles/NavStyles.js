@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
-export const LinkContainer = styled.div`
-  font-size: 25px;
-  text-align: center;
-  /* color: palevioletred; */
+const NavLink = styled.a`
+  background: black;
+  color: aqua;
+  padding: 5px 10px;
 `;
+
+export { NavLink };
