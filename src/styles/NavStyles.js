@@ -7,4 +7,11 @@ const NavLink = styled.a`
   font-family: 'martel';
 `;
 
-export { NavLink };
+const NavBar = styled.div`
+  background: blue;
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+`;
+
+export { NavLink, NavBar };
