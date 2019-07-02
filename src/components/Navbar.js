@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './NavLogo';
-import { NavLink } from '../styles/NavStyles';
+import { NavBar, NavLink } from '../styles/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 // TODO:
@@ -34,26 +34,28 @@ const NavbarComponent = class extends React.Component {
 
   render() {
     return (
-      <Grid>
-        <Row middle="xs">
-          <Col xs={4}>
-            <Logo className="nav-logo" />
-          </Col>
-          <Col xs={8}>
-            <Row end="xs" around="xs">
-              {links.map((link, i) => {
-                return (
-                  <Col key={i}>
-                    <NavLink className="nav-link" href="#">
-                      {link}
-                    </NavLink>
-                  </Col>
-                );
-              })}
-            </Row>
-          </Col>
-        </Row>
-      </Grid>
+      <NavBar>
+        <Grid>
+          <Row middle="xs">
+            <Col xs={4}>
+              <Logo className="nav-logo" />
+            </Col>
+            <Col xs={8}>
+              <Row end="xs" around="xs">
+                {links.map((link, i) => {
+                  return (
+                    <Col key={i}>
+                      <NavLink className="nav-link" href="#">
+                        {link}
+                      </NavLink>
+                    </Col>
+                  );
+                })}
+              </Row>
+            </Col>
+          </Row>
+        </Grid>
+      </NavBar>
     );
   }
 };
