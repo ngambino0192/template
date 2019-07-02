@@ -4,8 +4,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import {
   FigureStyles,
-  FigureCaption,
-  FigureImage
+  FigureCaption
 } from '../styles/HomepageStyles';
 
 const FeatureGrid = ({ gridItems }) => (

@@ -19,12 +19,12 @@ const FigureCaption = styled.figcaption`
   height: 100%;
 `;
 
-const FigureImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`;
+// const FigureImage = styled.img`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+// `;
 
-export { FigureStyles, FigureCaption, FigureImage };
+export { FigureStyles, FigureCaption };
