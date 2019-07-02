@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 const NavLink = styled.a`
   background: black;
-  color: green;
+  color: aqua;
+  padding: 5px 10px;
 `;
 
 export { NavLink };

@@ -3,15 +3,17 @@ import Logo from './NavLogo';
 import { NavLink } from '../styles/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
+// TODO:
+// Replace hardcoded links with data from querying top-level paths with GraphQL
 const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
 
 const NavbarComponent = class extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      scrollY: document.documentElement.scrollTop,
-    };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     scrollY: document.documentElement.scrollTop,
+  //   };
+  // }
   // componentDidMount() {
   //   this.setState({ scrollY: window.pageYOffset });
   //   window.addEventListener('scroll', resizeNav);
@@ -33,8 +35,23 @@ const NavbarComponent = class extends React.Component {
   render() {
     return (
       <Grid>
-        <Row>
-          <Col xs={6}>Hello World!</Col>
+        <Row middle="xs">
+          <Col xs={4}>
+            <Logo className="nav-logo" />
+          </Col>
+          <Col xs={8}>
+            <Row end="xs" around="xs">
+              {links.map((link, i) => {
+                return (
+                  <Col key={i}>
+                    <NavLink className="nav-link" href="#">
+                      {link}
+                    </NavLink>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Col>
         </Row>
       </Grid>
     );
@@ -42,22 +59,3 @@ const NavbarComponent = class extends React.Component {
 };
 
 export default NavbarComponent;
-
-// <Container className="navbar">
-//   <Row>
-//     <Col>
-//       <Logo className="nav-logo" />
-//     </Col>
-//     <Col>
-//       <Row>
-//         {links.map(link => {
-//           return (
-//             <Col>
-//               <NavLink className="nav-link">{link}</NavLink>
-//             </Col>
-//           );
-//         })}
-//       </Row>
-//     </Col>
-//   </Row>
-// </Container>

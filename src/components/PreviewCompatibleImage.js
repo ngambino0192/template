@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
-import { Figure } from 'react-bootstrap';
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = { borderRadius: '5px' };
@@ -28,8 +27,8 @@ PreviewCompatibleImage.propTypes = {
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-    style: PropTypes.object
-  }).isRequired
+    style: PropTypes.object,
+  }).isRequired,
 };
 
 export default PreviewCompatibleImage;
