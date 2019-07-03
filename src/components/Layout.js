@@ -6,10 +6,13 @@ import useSiteMetadata from './SiteMetadata';
 
 import { useStaticQuery, Link, graphql } from 'gatsby';
 
+import { GlobalStyle } from '../styles';
+
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
+    <div className="___LAYOUT___">
+      <GlobalStyle />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -21,12 +24,10 @@ const TemplateWrapper = ({ children }) => {
           href="/img/apple-touch-icon.png"
         />
         <link rel="icon" type="image/png" href="/img/favicon.ico" />
-        {/* <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        /> */}
+        <link
+          href="https://fonts.googleapis.com/css?family=Martel|Open+Sans"
+          rel="stylesheet"
+        />
 
         <link
           rel="mask-icon"
@@ -41,7 +42,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
       <NavbarComponent />
-      <div>{children}</div>
+      {children}
       <Footer />
     </div>
   );
