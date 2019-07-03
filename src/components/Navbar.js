@@ -11,25 +11,27 @@ const NavbarComponent = class extends React.Component {
   constructor() {
     super();
     this.state = {
-      scrollY: document.documentElement.scrollTop,
+      scrollY: '',
     };
   }
   componentDidMount() {
-    this.setState({ scrollY: window.pageYOffset });
-    window.addEventListener('scroll', resizeNav);
-    return () => {
-      window.removeEventListener('scroll', resizeNav);
-    };
+    if (window !== 'undefined') {
+      this.setState({ scrollY: window.pageYOffset });
+      window.addEventListener('scroll', resizeNav);
+      return () => {
+        window.removeEventListener('scroll', resizeNav);
+      };
 
-    function resizeNav(e) {
-      const nav = document.querySelector('.navbar');
+      function resizeNav(e) {
+        const nav = document.querySelector('.navbar');
 
-      if (window.scrollY > 200) {
-        // nav.style.display = 'none';
-        nav.classList.add('visible');
-      } else {
-        nav.classList.remove('visible');
-        nav.style.display = 'block';
+        if (window.scrollY > 200) {
+          // nav.style.display = 'none';
+          nav.classList.add('visible');
+        } else {
+          nav.classList.remove('visible');
+          nav.style.display = 'block';
+        }
       }
     }
   }
