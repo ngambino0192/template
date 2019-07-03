@@ -6,13 +6,13 @@ import useSiteMetadata from './SiteMetadata';
 
 import { useStaticQuery, Link, graphql } from 'gatsby';
 
-// import { GlobalStyles } from '../styles/GlobalStyles';
+import { GlobalStyle } from '../styles';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
-      {/* <GlobalStyles /> */}
+    <div className="___LAYOUT___">
+      <GlobalStyle />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -29,13 +29,6 @@ const TemplateWrapper = ({ children }) => {
           rel="stylesheet"
         />
 
-        {/* <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
-        /> */}
-
         <link
           rel="mask-icon"
           href="/img/safari-pinned-tab.svg"
@@ -49,7 +42,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
       <NavbarComponent />
-      <div>{children}</div>
+      {children}
       <Footer />
     </div>
   );

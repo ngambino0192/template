@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './NavLogo';
-import { NavLink, NavBar } from '../styles/NavStyles';
+import { NavLink, NavBar } from '../styles/components/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 // TODO:
@@ -11,7 +11,7 @@ const NavbarComponent = class extends React.Component {
   constructor() {
     super();
     this.state = {
-      scrollY: document.documentElement.scrollTop
+      scrollY: document.documentElement.scrollTop,
     };
   }
   componentDidMount() {
@@ -25,9 +25,10 @@ const NavbarComponent = class extends React.Component {
       const nav = document.querySelector('.navbar');
 
       if (window.scrollY > 200) {
-        nav.style.display = 'none';
+        // nav.style.display = 'none';
         nav.classList.add('visible');
       } else {
+        nav.classList.remove('visible');
         nav.style.display = 'block';
       }
     }

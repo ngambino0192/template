@@ -4,14 +4,14 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 import {
   FigureStyles,
-  FigureCaption
-} from '../styles/HomepageStyles';
+  FigureCaption,
+} from '../styles/components/HomepageStyles';
 
 const FeatureGrid = ({ gridItems }) => (
   <Grid className="grid">
     <Row middle="xs" className="row">
-      {gridItems.map(item => (
-        <Col xs={12} sm={6} md={4} className="col-4">
+      {gridItems.map((item, i) => (
+        <Col xs={12} sm={6} md={4} className="col-4" key={i}>
           <div key={item.text}>
             <div>
               <div>
@@ -32,9 +32,9 @@ FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-      text: PropTypes.string
+      text: PropTypes.string,
     })
-  )
+  ),
 };
 
 export default FeatureGrid;
