@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const NavLink = styled.a`
   color: #ffffff;
   padding: 5px 10px;
-  font-family: 'martel';
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 `;
 
 const NavBar = styled.div`

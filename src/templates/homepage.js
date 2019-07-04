@@ -16,7 +16,7 @@ export const HomePageTemplate = ({ title, tags }) => {
 };
 
 HomePageTemplate.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 
 const HomePage = ({ data }) => {
@@ -30,8 +30,8 @@ const HomePage = ({ data }) => {
 
 HomePage.propTypes = {
   data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
+    markdownRemark: PropTypes.object
+  })
 };
 
 export default HomePage;

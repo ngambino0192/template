@@ -19,6 +19,13 @@ const FigureCaption = styled.figcaption`
   height: 100%;
 `;
 
+const HomePageH1 = styled.h1`
+  color: #333333;
+  padding: 5px 10px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+`;
+
 // const FigureImage = styled.img`
 //   position: absolute;
 //   top: 0;
@@ -27,4 +34,4 @@ const FigureCaption = styled.figcaption`
 //   height: 100%;
 // `;
 
-export { FigureStyles, FigureCaption };
+export { FigureStyles, FigureCaption, HomePageH1 };
