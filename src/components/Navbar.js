@@ -27,12 +27,9 @@ const NavbarComponent = class extends React.Component {
       return () => {
         window.removeEventListener('scroll', resizeNav);
       };
-
       function resizeNav(e) {
         const nav = document.querySelector('.navbar');
-
         if (window.scrollY > 200) {
-          // nav.style.display = 'none';
           nav.classList.add('visible');
         } else {
           nav.classList.remove('visible');
@@ -46,7 +43,7 @@ const NavbarComponent = class extends React.Component {
     return (
       <NavBar className="navbar">
         <Grid>
-          <Row middle="xs">
+          <Row>
             <Col xs={4}>
               <Logo className="nav-logo" />
             </Col>
@@ -55,8 +52,8 @@ const NavbarComponent = class extends React.Component {
                 {links.map((link, i) => {
                   return (
                     <Col key={i}>
-                      <NavLink className="nav-link" href="#">
-                        {link}
+                      <NavLink className="nav-link" href={link.slug}>
+                        {link.title}
                       </NavLink>
                     </Col>
                   );
