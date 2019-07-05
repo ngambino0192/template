@@ -14,10 +14,12 @@ import {
 } from '../styles/component-styles/HomepageStyles';
 
 import BlogRoll from '../components/BlogRoll';
+import Video from '../components/HomepageVideo';
 
 export const IndexPageTemplate = ({
   image,
   title,
+  videoUrl,
   heading,
   subheading,
   mainpitch,
@@ -25,20 +27,8 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
-    {/* <iframe
-      title="unique"
-      class="video-player video-player--banner"
-      src="https://player.vimeo.com/video/315768830?background=1&autoplay=1&loop=1&byline=0&title=0"
-    /> */}
-    <div
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`
-      }}
-    >
+    <div className="hero-banner">
+      <Video videoUrl={videoUrl} />
       <Grid>
         <HomePageDiv>
           <Row>
@@ -71,6 +61,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  videoUrl: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
@@ -88,6 +79,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        videoUrl={frontmatter.videoUrl}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
@@ -113,6 +105,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        videoUrl
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
