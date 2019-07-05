@@ -18,6 +18,7 @@ import BlogRoll from '../components/BlogRoll';
 export const IndexPageTemplate = ({
   image,
   title,
+  iFrame,
   heading,
   subheading,
   mainpitch,
@@ -25,6 +26,7 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
+    {/* <div>{iFrame}</div> */}
     <iframe
       title="unique"
       class="video-player video-player--banner"
@@ -118,6 +120,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        iFrame
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
