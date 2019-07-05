@@ -6,11 +6,11 @@ const FigureStyles = styled.figure`
   position: relative;
   overflow: hidden;
   margin: 10px 1%;
-  background: #726fb9;
   text-align: center;
   cursor: pointer;
   background: #000;
   margin-bottom: 30px;
+  }
 `;
 
 const FigureCaption = styled.figcaption`
@@ -19,6 +19,17 @@ const FigureCaption = styled.figcaption`
   left: 0;
   width: 100%;
   height: 100%;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 30%;
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(0, -20px, 0);
+  transform: translate3d(0, -20px, 0);
+  }
+
 `;
 
 const HomePageDiv = styled.div`

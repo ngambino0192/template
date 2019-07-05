@@ -21,36 +21,38 @@ const Footer = class extends React.Component {
         <Grid>
           <Row>
             <Col lg={12}>
-              <Row center="lg">
-                <Col lg={3}>
+              <Row center="lg" middle="xs" center="xs">
+                <Col xs={12} lg={3}>
                   <div>
                     <img
                       src={logo}
                       alt="Shaka"
-                      style={{ width: '14em', height: '10em' }}
+                      style={{
+                        maxWidth: '100%'
+                      }}
                     />
                   </div>
                 </Col>
-                <Col lg={6}>
+                <Col xs={12} lg={6}>
                   <div>
-                    <FooterUl style={{ display: 'inline-flex' }}>
-                      <FooterLi style={{ padding: '2rem' }}>
+                    <FooterUl>
+                      <FooterLi>
                         <Link to="/vacations">Our Vacations</Link>
                       </FooterLi>
-                      <FooterLi style={{ padding: '2rem' }}>
+                      <FooterLi>
                         <Link to="/about">Planning Calendar</Link>
                       </FooterLi>
-                      <FooterLi style={{ padding: '2rem' }}>
+                      <FooterLi>
                         <Link to="/products">Travel Tips</Link>
                       </FooterLi>
-                      <FooterLi style={{ padding: '2rem' }}>
+                      <FooterLi>
                         <Link to="/contact/examples">Shaka TV</Link>
                       </FooterLi>
                     </FooterUl>
                   </div>
                 </Col>
-                <Col lg={3}>
-                  <Row end="lg">
+                <Col xs={12} lg={3}>
+                  <Row end="lg" middle="xs" center="xs">
                     <Col>
                       <div>
                         <a title="facebook" href="https://facebook.com">
