@@ -1,6 +1,7 @@
 ---
 templateKey: index-page
 title: Plan your next trip to Oahu
+iFrame: '<iframe src="http://www.example.com/" width="600" height="400"></iframe>'
 image: /img/home-jumbotron.jpg
 heading: See our Products
 subheading: See Oahu's Best Locations
