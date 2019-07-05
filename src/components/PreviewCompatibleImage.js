@@ -6,7 +6,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {
     borderRadius: '5px',
     opacity: '0.75',
-    transition: 'opacity 0.35s'
+    transition: 'opacity 0.35s',
   };
   const { alt = '', childImageSharp, image } = imageInfo;
 
@@ -31,8 +31,8 @@ PreviewCompatibleImage.propTypes = {
     alt: PropTypes.string,
     childImageSharp: PropTypes.object,
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-    style: PropTypes.object
-  }).isRequired
+    style: PropTypes.object,
+  }).isRequired,
 };
 
 export default PreviewCompatibleImage;

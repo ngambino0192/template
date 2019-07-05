@@ -25,7 +25,7 @@ const TemplateWrapper = ({ children }) => {
         />
         <link rel="icon" type="image/png" href="/img/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css?family=Martel|Open+Sans"
+          href="https://fonts.googleapis.com/css?family=Martel|Open+Sans:300,400,500,800"
           rel="stylesheet"
         />
 
@@ -43,7 +43,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <NavbarComponent />
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
