@@ -76,7 +76,7 @@ collections:
               default: 'index-page',
             }
           - { label: Title, name: title, widget: string }
-          - { label: iFrame, name: iFrame, widget: string }
+          - { label: videoUrl, name: videoUrl, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
