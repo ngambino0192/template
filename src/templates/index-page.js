@@ -25,11 +25,14 @@ export const IndexPageTemplate = ({
   intro
 }) => (
   <div>
-    {/* <iframe
+    <iframe
       title="unique"
       class="video-player video-player--banner"
+      width="1200"
+      height="800"
       src="https://player.vimeo.com/video/315768830?background=1&autoplay=1&loop=1&byline=0&title=0"
-    /> */}
+    />
+    {/* <iframe src="http://www.example.com/" width="1200" height="800"></iframe> */}
     <div
       style={{
         backgroundImage: `url(${
