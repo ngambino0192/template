@@ -43,7 +43,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <NavbarComponent />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
