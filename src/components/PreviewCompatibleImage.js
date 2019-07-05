@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
+import { redirectTo } from '@reach/router';
 
 const PreviewCompatibleImage = ({ imageInfo }) => {
   const imageStyle = {
     borderRadius: '5px',
     opacity: '0.75',
-    transition: 'opacity 0.35s'
+    transition: 'opacity 0.35s',
+    background: '#000'
   };
   const { alt = '', childImageSharp, image } = imageInfo;
 
