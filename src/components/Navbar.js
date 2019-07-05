@@ -5,7 +5,13 @@ import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 // TODO:
 // Replace hardcoded links with data from querying top-level paths with GraphQL
-const links = ['Vacations', 'Planning', 'Travel Tips', 'Shaka TV'];
+const links = [
+  { title: 'Vacations', slug: '/vacations' },
+  { title: 'Blog', slug: '/blog' },
+  { title: 'Planning', slug: '/planning' },
+  { title: 'Travel Tips', slug: '/traveltips' },
+  { title: 'Shaka TV', slug: '/shakatv' }
+];
 
 const NavbarComponent = class extends React.Component {
   // constructor() {
@@ -35,7 +41,7 @@ const NavbarComponent = class extends React.Component {
   render() {
     return (
       <Grid>
-        <Row middle="xs">
+        <Row>
           <Col xs={4}>
             <Logo className="nav-logo" />
           </Col>
@@ -44,8 +50,8 @@ const NavbarComponent = class extends React.Component {
               {links.map((link, i) => {
                 return (
                   <Col key={i}>
-                    <NavLink className="nav-link" href="#">
-                      {link}
+                    <NavLink className="nav-link" href={link.slug}>
+                      {link.title}
                     </NavLink>
                   </Col>
                 );

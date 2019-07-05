@@ -18,7 +18,6 @@ export const ProductPageTemplate = ({
   fullImage,
   pricing
 }) => {
-  // console.log('title: ', title);
   return (
     <div className="content">
       <div
