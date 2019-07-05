@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './NavLogo';
-import { NavLink, NavBar } from '../styles/components/NavStyles';
+import { NavLink, NavBar } from '../styles/component-styles/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
 
 // TODO:
