@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import { media } from '../index';
 
 const FooterStyles = styled.footer`
-  background: grey;
+  background-color: #ffffff;
   display: flex;
+  text-align: center;
 `;
 
 const FooterUl = styled.ul`
@@ -12,7 +13,7 @@ const FooterUl = styled.ul`
 `;
 
 const FooterLi = styled.li`
-  padding: 2rem;
+  padding: 2em 1em 2em 1em;
 `;
 
 export { FooterStyles, FooterUl, FooterLi };
