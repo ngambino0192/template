@@ -28,7 +28,7 @@ intro:
         Ocean Activities
     - image: /img/item-3.png
       text: |
-        Hawaiian History
+        Hawaiian History & Culture
     - image: /img/item-4.png
       text: |
         Hiking
