@@ -65,6 +65,8 @@ const MainImageContainer = styled.div`
 
 const ImageContainer = styled.div`
   width: 25%;
+  overflow: hidden;
+  position: relative;
 `;
 
 const PackageTitle = styled.h3`
@@ -84,6 +86,33 @@ const ImageThumbnail = styled.img`
   object-fit: cover;
 `;
 
+const TextHoverDetails = styled.div`
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+
+  .fade-in-top {
+    top: 20%;
+  }
+`;
+
+const Day = styled.h3`
+  color: #fff;
+  font-weight: 600;
+  font-size: ${fontSizes.xlarge};
+  margin: 0;
+  padding: 0;
+`;
+
 export {
   Background,
   VacationsContainer,
@@ -97,4 +126,6 @@ export {
   PackageDescription,
   ImageThumbnail,
   MainImageContainer,
+  TextHoverDetails,
+  Day,
 };

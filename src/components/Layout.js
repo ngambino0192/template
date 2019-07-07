@@ -11,7 +11,7 @@ import { GlobalStyle } from '../styles';
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div className="___LAYOUT___">
+    <div>
       <GlobalStyle />
       <Helmet>
         <html lang="en" />
