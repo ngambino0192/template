@@ -8,7 +8,6 @@ const NavLink = styled.a`
 `;
 
 const NavBar = styled.div`
-  background: none;
   position: fixed;
   width: 100vw;
   z-index: 99;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
+import FooterLogo from '../components/FooterLogo';
 
-import logo from '../img/logo.svg';
 import facebook from '../img/social/facebook.svg';
 import instagram from '../img/social/instagram.svg';
 import twitter from '../img/social/twitter.svg';
@@ -22,18 +22,14 @@ const Footer = class extends React.Component {
           <Row>
             <Col lg={12}>
               <Row center="lg" middle="xs" center="xs">
-                <Col xs={12} lg={3}>
+                <Col xs={12} lg={2}>
                   <div>
-                    <img
-                      src={logo}
-                      alt="Shaka"
-                      style={{
-                        maxWidth: '100%'
-                      }}
-                    />
+                    <Link to="/">
+                      <FooterLogo />
+                    </Link>
                   </div>
                 </Col>
-                <Col xs={12} lg={6}>
+                <Col xs={12} lg={8}>
                   <div>
                     <FooterUl>
                       <FooterLi>
@@ -51,7 +47,7 @@ const Footer = class extends React.Component {
                     </FooterUl>
                   </div>
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} lg={2}>
                   <Row end="lg" middle="xs" center="xs">
                     <Col>
                       <div>
@@ -59,28 +55,47 @@ const Footer = class extends React.Component {
                           <img
                             src={facebook}
                             alt="Facebook"
-                            style={{ width: '1em', height: '1em' }}
+                            style={{
+                              width: '1em',
+                              height: '1em',
+                              padding: '.5em'
+                            }}
                           />
                         </a>
                         <a title="twitter" href="https://twitter.com">
                           <img
                             src={twitter}
                             alt="Twitter"
-                            style={{ width: '1em', height: '1em' }}
+                            style={{
+                              width: '1em',
+                              height: '1em',
+                              margin: '.5em',
+                              fill: '#333333'
+                            }}
                           />
                         </a>
                         <a title="instagram" href="https://instagram.com">
                           <img
                             src={instagram}
                             alt="Instagram"
-                            style={{ width: '1em', height: '1em' }}
+                            style={{
+                              width: '1em',
+                              height: '1em',
+                              margin: '.5em',
+                              fill: '#333333'
+                            }}
                           />
                         </a>
                         <a title="vimeo" href="https://vimeo.com">
                           <img
                             src={vimeo}
                             alt="Vimeo"
-                            style={{ width: '1em', height: '1em' }}
+                            style={{
+                              width: '1em',
+                              height: '1em',
+                              margin: '.5em',
+                              fill: '#333333'
+                            }}
                           />
                         </a>
                       </div>

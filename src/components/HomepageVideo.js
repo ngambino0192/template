@@ -11,6 +11,13 @@ const Video = ({ videoURL, videoTitle, ...props }) => (
     webkitallowfullscreen="true"
     mozallowfullscreen="true"
     allowFullScreen
+    style={{
+      background:
+        'linear-gradient(rgba(13, 138, 166, 0.8), rgba(13, 138, 166, 0.8)',
+      position: 'fixed',
+      height: '100vh',
+      height: '100vw'
+    }}
   />
 );
 

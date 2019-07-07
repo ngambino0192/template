@@ -59,11 +59,11 @@ const HomePageH2 = styled.h2`
 `;
 
 const HomePageP = styled.p`
-  color: #333333;
+  color: #ffffff;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   padding: 1em;
-  margin: 0;
+  margin-top: -3em;
 `;
 
 const HomePageButton = styled.button`
