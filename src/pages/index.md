@@ -47,6 +47,8 @@ intro:
     - image: /img/item-9.png
       text: |
         Music & Events
+    - image: /img/atlantis.jpg
+      text: Atlantis Cruise
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
