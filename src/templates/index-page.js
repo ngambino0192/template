@@ -45,9 +45,9 @@ export const IndexPageTemplate = ({
     <section className="section">
       <Grid>
         <Row>
-          <Col xs={12} lg={12}>
+          {/* <Col xs={12} lg={12}>
             <HomePageH2 className="title">{mainpitch.title}</HomePageH2>
-          </Col>
+          </Col> */}
           <Col xs={12} lg={12}>
             <HomePageP className="subtitle">{mainpitch.description}</HomePageP>
           </Col>

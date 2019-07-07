@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Logo from './NavLogo';
 import { NavLink, NavBar } from '../styles/component-styles/NavStyles';
 import { Grid, Col, Row } from 'react-styled-flexboxgrid';
@@ -45,7 +46,9 @@ const NavbarComponent = class extends React.Component {
         <Grid>
           <Row>
             <Col xs={4}>
-              <Logo className="nav-logo" />
+              <Link to="/">
+                <Logo className="nav-logo" />
+              </Link>
             </Col>
             <Col xs={8}>
               <Row end="xs" around="xs">
