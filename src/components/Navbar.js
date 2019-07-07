@@ -11,14 +11,14 @@ const links = [
   { title: 'Blog', slug: '/blog' },
   { title: 'Planning', slug: '/planning' },
   { title: 'Travel Tips', slug: '/traveltips' },
-  { title: 'Shaka TV', slug: '/shakatv' }
+  { title: 'Shaka TV', slug: '/shakatv' },
 ];
 
 const NavbarComponent = class extends React.Component {
   constructor() {
     super();
     this.state = {
-      scrollY: ''
+      scrollY: '',
     };
   }
   componentDidMount() {

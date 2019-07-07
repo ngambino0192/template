@@ -93,9 +93,27 @@ const GlobalStyle = createGlobalStyle`
   .visible {
     background: ${colors.darkGrey};
   }
-
-
   
+  .vacation-img-container .vacation-img-overlay {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.vacation-img-container:hover .vacation-img-overlay{
+  opacity: 1;
+}
+
+.vacation-img-container:hover .text-hover-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
   `;
 
 export default GlobalStyle;

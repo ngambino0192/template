@@ -9,7 +9,7 @@ import {
   HeaderContainer,
   VacationsTitle,
   Subtitle,
-} from '../../styles/components/VacationStyles';
+} from '../../styles/component-styles/VacationStyles';
 
 export default class VacationIndexPage extends React.Component {
   render() {

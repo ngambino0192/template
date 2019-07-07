@@ -10,7 +10,9 @@ import {
   ImageThumbnail,
   PackageDescription,
   MainImageContainer,
-} from '../styles/components/VacationStyles';
+  TextHoverDetails,
+  Day,
+} from '../styles/component-styles/VacationStyles';
 
 const images = [
   '/img/ocean-shaka.jpg',
@@ -28,7 +30,6 @@ class VacationItems extends React.Component {
       posts &&
       posts.map(({ node: post }, i) => (
         <VacationItemsContainer key={i}>
-          {console.log(post)}
           <TextContainer>
             <PackageTitle>{post.frontmatter.title}</PackageTitle>
             <PackageDescription>
@@ -36,18 +37,15 @@ class VacationItems extends React.Component {
             </PackageDescription>
           </TextContainer>
           <MainImageContainer>
-            <ImageContainer>
-              <ImageThumbnail src="/img/ocean-shaka.jpg" />
-            </ImageContainer>
-            <ImageContainer>
-              <ImageThumbnail src="/img/shark-diving.jpg" />
-            </ImageContainer>
-            <ImageContainer>
-              <ImageThumbnail src="/img/atlantis.jpg" />
-            </ImageContainer>
-            <ImageContainer>
-              <ImageThumbnail src="/img/pali-notches.jpg" />
-            </ImageContainer>
+            {images.map((image, i) => (
+              <ImageContainer key={i} className="vacation-img-container">
+                <div className="vacation-img-overlay" />
+                <ImageThumbnail src={image} />
+                <TextHoverDetails className="text-hover-details fade-in-top">
+                  <Day>Day {i + 1}</Day>
+                </TextHoverDetails>
+              </ImageContainer>
+            ))}
           </MainImageContainer>
         </VacationItemsContainer>
       ))
@@ -100,37 +98,3 @@ export default () => (
     render={(data, count) => <VacationItems data={data} count={count} />}
   />
 );
-
-const VacationThumbnail = ({ imageInfo }) => {
-  const imageStyle = {
-    borderRadius: '5px',
-    opacity: '0.75',
-    transition: 'opacity 0.35s',
-    width: '25%',
-  };
-  const { alt = '', childImageSharp, image } = imageInfo;
-
-  if (!!image && !!image.childImageSharp) {
-    return (
-      <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} />
-    );
-  }
-
-  if (!!childImageSharp) {
-    return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} />;
-  }
-
-  if (!!image && typeof image === 'string')
-    return <img style={imageStyle} src={image} alt={alt} />;
-
-  return null;
-};
-
-VacationThumbnail.propTypes = {
-  imageInfo: PropTypes.shape({
-    alt: PropTypes.string,
-    childImageSharp: PropTypes.object,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
-    style: PropTypes.object,
-  }).isRequired,
-};
