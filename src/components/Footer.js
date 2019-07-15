@@ -19,7 +19,7 @@ const Footer = class extends React.Component {
     return (
       <FooterStyles>
         <Grid>
-          <Row>
+          <Row around="sm">
             <Col lg={12}>
               <Row center="lg" middle="xs" center="xs">
                 <Col xs={12} lg={2}>
@@ -51,17 +51,18 @@ const Footer = class extends React.Component {
                   <Row end="lg" middle="xs" center="xs">
                     <Col>
                       <div>
-                        <a title="facebook" href="https://facebook.com">
+                        {/* <a title="facebook" href="https://facebook.com">
                           <img
                             src={facebook}
                             alt="Facebook"
                             style={{
                               width: '1em',
                               height: '1em',
-                              padding: '.5em'
+                              padding: '.5em',
+                              fill: '#333333'
                             }}
                           />
-                        </a>
+                        </a> */}
                         <a title="twitter" href="https://twitter.com">
                           <img
                             src={twitter}
