@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: iframe-config
+  branch: mobile-vacation-thumbnails
 
 publish_mode: editorial_workflow
 media_folder: static/img

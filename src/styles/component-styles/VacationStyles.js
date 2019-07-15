@@ -103,6 +103,8 @@ const TextHoverDetails = styled.div`
   .fade-in-top {
     top: 20%;
   }
+
+  ${media.tablet`opacity: 1;`};
 `;
 
 const Day = styled.h3`
