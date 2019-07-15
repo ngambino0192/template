@@ -8,7 +8,6 @@ const FigureStyles = styled.figure`
   margin: 10px 1%;
   text-align: center;
   cursor: pointer;
-  background: #000;
   margin-bottom: 30px;
   }
 `;
