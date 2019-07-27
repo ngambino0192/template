@@ -23,9 +23,8 @@ intro:
     - image: /img/item-1.png
       text: |
         Beaches
-    - image: /img/item-2.png
-      text: |
-        Ocean Lifestyle
+    - image: /img/atlantis.jpg
+      text: Ocean Lifestyle
     - image: /img/item-3.png
       text: |
         Hawaiian History & Culture
