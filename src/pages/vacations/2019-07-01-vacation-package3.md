@@ -1,6 +1,6 @@
 ---
 templateKey: vacation-package
-title: Moana Uli (Red Sea)
+title: Moana Uli (Green Sea)
 date: 2019-07-04T23:12:48.250Z
 description: >-
   Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm.
