@@ -1,16 +1,18 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import './all.sass';
+import NavbarComponent from './Navbar';
 import useSiteMetadata from './SiteMetadata';
 
 import { useStaticQuery, Link, graphql } from 'gatsby';
+
+import { GlobalStyle } from '../styles';
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
+      <GlobalStyle />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -21,17 +23,10 @@ const TemplateWrapper = ({ children }) => {
           sizes="180x180"
           href="/img/apple-touch-icon.png"
         />
+        <link rel="icon" type="image/png" href="/img/favicon.ico" />
         <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/img/favicon-16x16.png"
-          sizes="16x16"
+          href="https://fonts.googleapis.com/css?family=Martel|Open+Sans:300,400,500,800"
+          rel="stylesheet"
         />
 
         <link
@@ -46,8 +41,8 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
-      <Navbar />
-      <div>{children}</div>
+      <NavbarComponent />
+      {children}
       <Footer />
     </div>
   );

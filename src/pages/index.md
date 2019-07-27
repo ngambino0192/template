@@ -1,16 +1,15 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Plan your next trip to Oahu
+videoUrl: 'https://player.vimeo.com/video/315768830?background=1&autoplay=1&loop=1&byline=0&title=0'
+videoTitle: 'Video Title'
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: See our Products
+subheading: See Oahu's Best Locations
 mainpitch:
-  title: Why Kaldi
+  title: Why HappyShaka
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Happy Shaka is your online portal for everything to see and do on the island of Oahu. Whether you need to book an adventure, travel to the most iconic beaches, or experience the rich history of Hawaii, we are here to help your vacation the happiest one yet.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
@@ -18,33 +17,33 @@ description: >-
   anyone.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/item-1.png
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - image: /img/coffee-gear.png
+        Beaches
+    - image: /img/item-2.png
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - image: /img/tutorials.png
+        Ocean Activities
+    - image: /img/item-3.png
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - image: /img/meeting-space.png
+        Hawaiian History & Culture
+    - image: /img/item-4.png
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+        Hiking
+    - image: /img/item-5.png
+      text: >
+        Museums & Art
+    - image: /img/item-6.png
+      text: >
+        Adventure
+    - image: /img/item-7.png
+      text: >
+        Food & Cuisine
+    - image: /img/item-8.png
+      text: >
+        Golf
+    - image: /img/item-9.png
+      text: >
+        Music & Events
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
